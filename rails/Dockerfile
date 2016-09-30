@@ -3,7 +3,7 @@ MAINTAINER Marc Serra <mserra@wakatagroup.com>
 RUN apt-get update
 # install the prerequisite patches here so that rvm will install under non-root account. 
 RUN apt-get install -y curl patch gawk g++ gcc make libc6-dev patch libreadline6-dev zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config libffi-dev
-RUN useradd -ms /bin/bash a
+RUN useradd -ms /bin/bash app
 USER app
 
 ENV RUBY_VERSION 1.9.2
