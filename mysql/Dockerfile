@@ -26,8 +26,8 @@ ENV MYSQL_REMOTE_PASSWORD secret
 
 ADD ./mysql-setup.sh /tmp/mysql-setup.sh
 
-CMD["sed", "-i", "-e", "s/root/${MYSQL_REMOTE_USER}/", "/etc/mysql/my.cnf"]
-CMD["sed", "-i", "-e", "s/secret/${MYSQL_REMOTE_PASSWORD}/", "/etc/mysql/my.cnf"]
+CMD ["sed", "-i", "-e", "s/root/${MYSQL_REMOTE_USER}/", "/etc/mysql/my.cnf"]
+CMD ["sed", "-i", "-e", "s/secret/${MYSQL_REMOTE_PASSWORD}/", "/etc/mysql/my.cnf"]
 
 RUN /bin/sh /tmp/mysql-setup.sh
 
