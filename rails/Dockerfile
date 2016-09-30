@@ -3,8 +3,13 @@ MAINTAINER Marc Serra <mserra@wakatagroup.com>
 RUN apt-get update
 # install the prerequisite patches here so that rvm will install under non-root account. 
 RUN apt-get install -y curl patch gawk g++ gcc make libc6-dev patch libreadline6-dev zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config libffi-dev
-RUN useradd -ms /bin/bash app
+
+#Add user app to sudoers
+RUN useradd -ms /bin/bash app -G sudo
+RUN echo "app ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
 USER app
+
 
 ENV RUBY_VERSION 1.9.2
 ENV RAILS_VERSION 3.1
@@ -16,8 +21,13 @@ RUN /bin/bash -l -c "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
 RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"
 RUN /bin/bash -l -c "gem install rails --version ${RAILS_VERSION}"
 
-# Nginx configuration
 USER root
+
+# Remove user app from sudoers
+RUN gpasswd -d app sudo
+RUN head -n -1 /etc/sudoers
+
+# Nginx configuration
 RUN apt-get install -y nginx
 
 RUN /bin/bash -l -c "mkdir /var/app-socket"
