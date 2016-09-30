@@ -1,4 +1,4 @@
-FROM ubuntu/14.04
+FROM ubuntu:14.04
 MAINTAINER Marc Serra <mserra@wakatagroup.com>
 RUN apt-get update
 # install the prerequisite patches here so that rvm will install under non-root account. 
