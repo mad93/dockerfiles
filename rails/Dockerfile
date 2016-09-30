@@ -25,5 +25,11 @@ RUN /bin/bash -l -c "chown app:app -R /var/app-socket"
 RUN /bin/bash -l -c "mkdir /var/www/app"
 RUN /bin/bash -l -c "chown app:app -R /var/www/app"
 
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+  && ln -sf /dev/stderr /var/log/nginx/error.log
+
 # The whole point is to expose a http server
 EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
