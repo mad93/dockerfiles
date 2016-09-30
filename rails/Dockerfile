@@ -11,8 +11,8 @@ RUN echo "app ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER app
 
 
-ENV RUBY_VERSION 1.9.2
-ENV RAILS_VERSION 3.1
+ENV RUBY_VERSION ree-1.8.7-2011.02
+ENV RAILS_VERSION 3.2.14
 
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 RUN /bin/bash -l -c "curl -L get.rvm.io | bash -s stable"
