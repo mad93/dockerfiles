@@ -6,7 +6,7 @@ RUN apt-get install -y curl patch gawk g++ gcc make libc6-dev patch libreadline6
 
 #Add user app to sudoers
 RUN useradd -ms /bin/bash app -G sudo
-RUN echo "app ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN echo "app ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER app
 
