@@ -2,4 +2,4 @@
 
 Set of docker images.
 
-These images are builded automatically
+These images are builded automatically.
