@@ -11,7 +11,7 @@ RUN echo "app ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER app
 
 
-ENV RUBY_VERSION ree-1.8.7-2012.02
+ENV RUBY_VERSION 1.8.7
 ENV RAILS_VERSION 3.2.14
 
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
