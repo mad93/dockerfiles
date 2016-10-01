@@ -12,14 +12,12 @@ USER app
 
 
 ENV RUBY_VERSION 1.8.7
-ENV RAILS_VERSION 3.2.14
 
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 RUN /bin/bash -l -c "curl -L get.rvm.io | bash -s stable"
 RUN /bin/bash -l -c "rvm install ${RUBY_VERSION}"
 RUN /bin/bash -l -c "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
 RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"
-RUN /bin/bash -l -c "gem install rails --version ${RAILS_VERSION}"
 
 USER root
 
