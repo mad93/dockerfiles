@@ -30,7 +30,7 @@ RUN apt-get install -y nginx
 
 RUN /bin/bash -l -c "mkdir /var/app-socket"
 RUN /bin/bash -l -c "chown app:app -R /var/app-socket"
-RUN /bin/bash -l -c "mkdir /var/www/app"
+RUN /bin/bash -l -c "mkdir -p /var/www/app"
 RUN /bin/bash -l -c "chown app:app -R /var/www/app"
 
 # forward request and error logs to docker log collector
