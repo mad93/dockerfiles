@@ -6,8 +6,8 @@ https://hub.docker.com/_/mysql/
 
 docker run \
     --name mysql \
-    -e MYSQL_ROOT_PASSWORD=my-secret-pw
-    -v /my/own/datadir:/var/lib/mysql
+    -e MYSQL_ROOT_PASSWORD=my-secret-pw \
+    -v /my/own/datadir:/var/lib/mysql \
     -d mysql:latest
 
 docker run \
