@@ -15,5 +15,5 @@ docker run \
     --link mysql:mysql \
     --volume /your/html/directory:/var/www/html \
     --volume /your/apache/config:/etc/apache2 \
-    --publish 80:80
+    --publish 80:80 \
     -d mad93/codeigniter2
