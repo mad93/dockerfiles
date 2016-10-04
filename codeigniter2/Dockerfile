@@ -4,8 +4,7 @@ FROM mad93/apache2-php5
 
 MAINTAINER Marc Serra <mserra@wakatagroup.com>
 
-ADD ./setup.sh /tmp/setup.sh
-RUN /bin/sh /tmp/setup.sh
+RUN mkdir /var/www/html/httpsdocs
 
 COPY ./apache2.conf /etc/apache2/
 
