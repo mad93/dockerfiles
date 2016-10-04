@@ -7,7 +7,11 @@ MAINTAINER Marc Serra <mserra@wakatagroup.com>
 RUN mkdir -p /var/www/httpsdocs
 RUN chown www-data:www-data -R /var/www
 
+COPY ./
+
 COPY ./apache2.conf /etc/apache2/
+COPY ./httpd.conf /etc/apache2/
+COPY ./rewite.load /etc/apache2/mods-enabled
 COPY ./default /etc/apache2/sites-available
 
 VOLUME [ "/var/www" ]
