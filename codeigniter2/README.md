@@ -1,12 +1,13 @@
 CodeIgniter 2.1
 
-It is needed to link this image to the main mysql docker container
+The main mysql docker container is needed linked to this image 
 
 https://hub.docker.com/_/mysql/
 
 docker run \
     --name mysql \
     -e MYSQL_ROOT_PASSWORD=my-secret-pw \
+    -v /your/starting/sql/files:/docker-entrypoint-initdb.d \
     -v /my/own/datadir:/var/lib/mysql \
     -d mysql:latest
 
