@@ -10,6 +10,6 @@ RUN chown www-data:www-data -R /var/www
 COPY ./apache2.conf /etc/apache2/
 COPY ./default /etc/apache2/sites-available
 
-VOLUME [ "/var/www/html" ]
+VOLUME [ "/var/www" ]
 
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
