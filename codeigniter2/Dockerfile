@@ -9,7 +9,7 @@ RUN chown www-data:www-data -R /var/www
 
 COPY ./apache2.conf /etc/apache2/
 COPY ./httpd.conf /etc/apache2/
-COPY ./rewite.load /etc/apache2/mods-enabled/
+COPY ./rewrite.load /etc/apache2/mods-enabled/
 COPY ./default /etc/apache2/sites-available/
 
 VOLUME [ "/var/www" ]
