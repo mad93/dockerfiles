@@ -4,8 +4,6 @@ The main mysql docker container is needed linked to this image
 Please note that the main folder for apache is set to /var/www/httpsdocs
 That folder should exist inside the folder you want to mount with your container.
 
-https://hub.docker.com/_/mysql/
-
 docker run \
     --name mysql \
     -e MYSQL_ROOT_PASSWORD=my-secret-pw \
